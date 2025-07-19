@@ -5,7 +5,7 @@ import (
 	"io"
 )
 
-func Zip(file io.Reader) (io.Reader, func() error, chan error) {
+func Gzip(file io.Reader) (io.Reader, func() error, chan error) {
 	pipeR, pipeW := io.Pipe()
 	errCh := make(chan error, 1)
 	go func() {
